@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#09090d"><title>PRIME XIT GAMING</title>
+<style>
+:root{--bg:#08090d;--panel:#12131b;--panel2:#19151c;--red:#ff2448;--red2:#8c102a;--muted:#999ba8;--line:#30232a;--white:#f7f7fa;--green:#43d69a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,system-ui,-apple-system,Arial,sans-serif}
+button,input{font:inherit}button{cursor:pointer}.app{max-width:520px;min-height:100dvh;margin:auto;background:radial-gradient(ellipse at 50% -10%,#3b0c1a 0,transparent 42%),var(--bg);padding-bottom:82px}
+header{position:sticky;top:0;z-index:5;background:#0b0b10ed;backdrop-filter:blur(14px);border-bottom:1px solid #2a1720;padding:13px 16px;display:flex;align-items:center;gap:11px}
+.logo{height:43px;width:43px;border-radius:13px;background:linear-gradient(140deg,#ff3657,#8d0926);display:grid;place-items:center;font-size:23px;box-shadow:0 0 22px #ff244833}
+.brand{font-weight:950;font-size:17px;letter-spacing:.2px}.brand span{color:var(--red)}.tag{font-size:8px;letter-spacing:1.5px;color:#ff8295;font-weight:800;margin-top:2px}
+.balance{margin-left:auto;border:1px solid #4d1c2b;background:#170d13;border-radius:22px;padding:9px 11px;font-size:12px;font-weight:800}
+main{padding:16px}.eyebrow{font-size:10px;color:#ff728a;letter-spacing:2px;font-weight:900}.hero{border:1px solid #552033;border-radius:21px;padding:18px;background:linear-gradient(125deg,#32101d,#15121a 60%,#0e1119);position:relative;overflow:hidden;margin:8px 0 22px}
+.hero:after{content:"✦";position:absolute;right:12px;top:-25px;font-size:130px;color:#ff244812;transform:rotate(15deg)}
+h1{font-size:27px;line-height:1.12;margin:8px 0;font-weight:950;max-width:270px}.hero p{color:#c1aeb5;font-size:12px;line-height:1.5;max-width:260px}.season{display:inline-block;color:#ff9bad;background:#5a182a66;border:1px solid #743048;padding:6px 9px;border-radius:20px;font-size:9px;font-weight:900;letter-spacing:1px}
+.sectionhead{display:flex;justify-content:space-between;align-items:center;margin:18px 0 11px}.sectionhead h2{font-size:15px;margin:0}.sectionhead small{color:var(--muted);font-size:10px}
+.filters{display:flex;gap:8px;overflow:auto;padding-bottom:8px}.filter{border:1px solid var(--line);background:#14131a;color:#aaa;padding:9px 13px;border-radius:20px;white-space:nowrap;font-size:11px;font-weight:800}.filter.active{background:var(--red);color:white;border-color:var(--red)}
+.card{background:linear-gradient(145deg,#17151d,#10121a);border:1px solid #33232b;border-radius:18px;overflow:hidden;margin:12px 0;box-shadow:0 8px 24px #0004}
+.cardtop{padding:15px;background:linear-gradient(100deg,#42101f,#19131b 70%,#111720);min-height:95px;display:flex;flex-direction:column;justify-content:center}
+.pill{font-size:9px;color:#ff8da1;font-weight:900;letter-spacing:1px}.cardtop h3{font-size:17px;margin:6px 0 0;font-weight:900}
+.cardbody{padding:13px}.meta{display:flex;justify-content:space-between;color:#b3b2bd;font-size:11px;margin-bottom:12px}.slots{color:#ff7189;font-weight:900}
+.prizes{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.prize{background:#0b0d13;border:1px solid #35252d;border-radius:12px;text-align:center;padding:10px 3px}.prize b{display:block;color:#ff6c84;font-size:9px;letter-spacing:1px}.prize strong{font-size:16px;display:block;margin-top:3px}
+.cardfoot{display:flex;align-items:center;justify-content:space-between;margin:12px 0 0;font-size:11px;color:#aaa}.preview{color:#69dca9;font-size:9px;font-weight:900}
+.primary{width:100%;border:0;border-radius:12px;background:linear-gradient(100deg,#ff2448,#b70e31);color:white;padding:13px;font-weight:900;font-size:11px;letter-spacing:.5px;margin-top:12px;box-shadow:0 6px 18px #ff24482b}
+.secondary{border:1px solid #613043;background:#1a1118;color:#ff8da1;border-radius:11px;padding:11px 14px;font-weight:800}
+.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);display:grid;grid-template-columns:repeat(5,1fr);background:#0d0e15f5;backdrop-filter:blur(14px);border-top:1px solid #30212a;padding:8px 5px max(8px,env(safe-area-inset-bottom));z-index:8}
+.nav button{border:0;background:transparent;color:#858795;font-size:9px;font-weight:800;padding:5px 0}.nav button .ico{display:block;font-size:19px;margin-bottom:3px}.nav button.active{color:#ff4968}
+.page{display:none}.page.active{display:block}.box{border:1px solid var(--line);background:var(--panel);border-radius:16px;padding:15px;margin:12px 0}
+label{display:block;color:#c4bfc5;font-size:11px;margin:12px 0 6px}input{width:100%;background:#090b11;border:1px solid #3a2b34;border-radius:10px;padding:12px;color:white;outline:none}input:focus{border-color:var(--red)}
+.note{color:var(--muted);font-size:11px;line-height:1.55}.warn{border:1px solid #673044;background:#28121c;color:#ffb2c0;padding:12px;border-radius:12px;font-size:11px;line-height:1.5}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.bigbal{font-size:34px;font-weight:950;margin:6px 0 12px}
+.item{padding:13px 0;border-bottom:1px solid #2c252d;font-size:12px;color:#e8e5eb}.item:last-child{border:0}
+.splash{position:fixed;inset:0;background:radial-gradient(ellipse at center,#390b1b,#08090d 65%);z-index:20;display:grid;place-items:center;transition:opacity .6s,visibility .6s}.splash.hide{opacity:0;visibility:hidden}.splashinner{text-align:center;animation:rise 1.1s ease both}.splashlogo{width:90px;height:90px;border-radius:26px;background:linear-gradient(140deg,#ff3657,#8d0926);display:grid;place-items:center;font-size:44px;margin:auto;box-shadow:0 0 45px #ff244855}.splash h2{font-size:23px;margin:18px 0 4px;font-weight:1000}.splash p{font-size:9px;letter-spacing:2px;color:#ff8499;font-weight:900}.loader{height:4px;width:170px;background:#3a2029;border-radius:10px;margin:26px auto 0;overflow:hidden}.loader i{display:block;height:100%;width:0;background:#ff2448;animation:load 1.6s ease forwards}@keyframes load{to{width:100%}}@keyframes rise{from{opacity:0;transform:translateY(18px) scale(.94)}to{opacity:1;transform:none}}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#29202a;border:1px solid #684050;padding:11px 15px;border-radius:12px;font-size:11px;display:none;z-index:30;max-width:90%;text-align:center}
+</style>
+</head>
+<body>
+<div class="splash" id="splash"><div class="splashinner"><div class="splashlogo">🎮</div><h2>PRIME XIT GAMING</h2><p>FREE FIRE TOURNAMENT ARENA</p><div class="loader"><i></i></div></div></div>
+<div class="app">
+<header><div class="logo">🎮</div><div><div class="brand">PRIME <span>XIT</span> GAMING</div><div class="tag">FREE FIRE TOURNAMENT HUB</div></div><div class="balance">▣ &nbsp;₹0.00</div></header>
+<main>
+<section class="page active" id="home">
+<div class="hero"><span class="season">SEASON 01 • BERMUDA</span><div class="eyebrow" style="margin-top:14px">WELCOME TO THE ARENA</div><h1>Your squad.<br>Your strategy.<br>Your victory.</h1><p>Compete in Free Fire tournaments. Rise through the ranks and own the arena.</p></div>
+<div class="sectionhead"><h2>TOURNAMENT ARENA</h2><small>BERMUDA MAP</small></div>
+<div class="filters" id="filters"><button class="filter active" data-kind="ALL">ALL</button><button class="filter" data-kind="SOLO BR">SOLO BR</button><button class="filter" data-kind="SQUAD BR">SQUAD BR</button><button class="filter" data-kind="SURVIVAL">SURVIVAL</button></div>
+<div id="tournaments"></div>
+<div class="warn"><b>ENTRY & PRIZE CLARITY</b><br>Squad BR: proposed ₹100 per full squad (4 players). Solo and Survival entry fees are not final yet and are marked “Fee to be confirmed”. Prize amounts are shown separately as 1st, 2nd and 3rd place. All figures are sample proposals only; real-money entry/payouts remain disabled pending legal review and approved payment setup.</div>
+</section>
+<section class="page" id="joined"><div class="sectionhead"><h2>JOINED MATCHES</h2><small>YOUR ARENA</small></div><div class="box"><div style="font-size:30px">🏆</div><h3>No matches joined yet</h3><p class="note">Your confirmed tournament registrations will appear here after the live account system is connected.</p></div></section>
+<section class="page" id="wallet"><div class="sectionhead"><h2>MY WALLET</h2><small>SECURE LEDGER</small></div><div class="box" style="background:linear-gradient(130deg,#34101d,#17121a)"><div class="eyebrow">AVAILABLE BALANCE</div><div class="bigbal">₹0.00</div><p class="note">Real-money wallet is locked until legal review and authorised payment-provider approval.</p></div><button class="primary" disabled style="opacity:.45">＋ &nbsp; DEPOSIT • NOT ACTIVE</button><button class="secondary" disabled style="width:100%;margin-top:10px;opacity:.45">WITHDRAW • NOT ACTIVE</button><div class="warn" style="margin-top:15px">Do not send money to any personal UPI ID. This preview does not accept or transfer payments.</div><div class="sectionhead"><h2>TRANSACTION HISTORY</h2></div><div class="box note">No transactions yet.</div></section>
+<section class="page" id="profile"><div class="sectionhead"><h2>PLAYER PROFILE</h2><small>YOUR IDENTITY</small></div><div class="box"><div style="font-size:42px">👤</div><h2>Guest Player</h2><p class="note">Sign-in and verified player identity will be added in the secure backend phase.</p></div><div class="box"><div class="item">Free Fire UID <span style="float:right;color:#777">Not linked</span></div><div class="item">Squad history</div><div class="item">Tournament results</div><div class="item">Account settings</div></div></section>
+<section class="page" id="support"><div class="sectionhead"><h2>CUSTOMER SUPPORT</h2><small>WE'RE HERE TO HELP</small></div><div class="box"><div style="font-size:30px">🎧</div><h3>How can we help?</h3><p class="note">For tournament, account or technical issues, a live support ticket system will be connected in the production version.</p><label>Your issue</label><input id="issue" placeholder="Describe your issue"><button class="primary" onclick="toast('Support tickets will be enabled when the backend is connected.')">SUBMIT SUPPORT REQUEST</button></div></section>
+<section class="page" id="register"><div class="sectionhead"><h2>SQUAD REGISTRATION</h2><small>4 PLAYER DETAILS</small></div><div class="box"><div class="eyebrow" id="regTitle">TOURNAMENT</div><label>Squad name</label><input id="squad" placeholder="Enter squad name"><label>Captain name</label><input id="captain" placeholder="Captain's name"><div id="players"></div><button class="primary" onclick="validateSquad()">VALIDATE SQUAD DETAILS</button><p class="note" id="regMsg">All four players' names and Free Fire UIDs are required for squad registration. This form validates locally only.</p></div></section>
+</main>
+<nav class="nav">
+<button class="active" data-page="home"><span class="ico">🏆</span>Arena</button>
+<button data-page="joined"><span class="ico">🎯</span>Joined</button>
+<button data-page="wallet"><span class="ico">▣</span>Wallet</button>
+<button data-page="profile"><span class="ico">👤</span>Profile</button>
+<button data-page="support"><span class="ico">🎧</span>Support</button>
+</nav></div><div class="toast" id="toast"></div>
+<script>
+const data=[
+{title:"Bermuda Squad Championship #101",kind:"SQUAD BR",time:"08:30 PM",slots:"9/12",fee:"₹100 / squad",prizes:["₹500","₹250","₹150"]},
+{title:"Bermuda Solo Battle #102",kind:"SOLO BR",time:"09:00 PM",slots:"18/48",fee:"₹100 / player",prizes:["₹300","₹150","₹100"]},
+{title:"Bermuda Survival Clash #103",kind:"SURVIVAL",time:"09:30 PM",slots:"6/12",fee:"₹100 / full squad",prizes:["₹500","₹250","₹150"]},
+{title:"Bermuda Squad Clash #104",kind:"SQUAD BR",time:"10:00 PM",slots:"4/12",fee:"₹100 / squad",prizes:["₹500","₹250","₹150"]}
+];
+function card(t){return `<article class="card"><div class="cardtop"><div class="pill">MAP: BERMUDA • ${t.kind}</div><h3>${t.title}</h3></div><div class="cardbody"><div class="meta"><span>◷ &nbsp;Today, ${t.time}</span><span class="slots">${t.slots} TEAMS</span></div><div style="font-size:10px;color:#aaa;margin:0 0 7px">PRIZE DISTRIBUTION • TOTAL POOL ${t.prizes.reduce((sum,p)=>sum+Number(p.replace(/[₹,]/g,"")),0).toLocaleString("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:0})}</div><div class="prizes">${t.prizes.map((p,i)=>`<div class="prize"><b>${["🥇 1ST PLACE","🥈 2ND PLACE","🥉 3RD PLACE"][i]}</b><strong>${p}</strong></div>`).join("")}</div><div class="cardfoot"><span style="color:#f4d4dc;font-weight:800">ENTRY FEE: ${t.fee}</span><span class="preview">SAMPLE</span></div><button class="primary" onclick="openRegister('${t.title.replaceAll("'","")}')">VIEW & REGISTER</button></div></article>`}
+function render(kind="ALL"){document.getElementById("tournaments").innerHTML=data.filter(t=>kind==="ALL"||t.kind===kind).map(card).join("")}
+render();
+document.querySelectorAll(".filter").forEach(b=>b.onclick=()=>{document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");render(b.dataset.kind)});
+function page(id){document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id===id));document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===id));window.scrollTo(0,0)}
+document.querySelectorAll(".nav button").forEach(b=>b.onclick=()=>page(b.dataset.page));
+function openRegister(title){document.getElementById("regTitle").textContent=title;page("register")}
+const players=document.getElementById("players");
+for(let i=1;i<=4;i++)players.insertAdjacentHTML("beforeend",`<div style="border-top:1px solid #342630;margin-top:14px;padding-top:10px"><div class="eyebrow">PLAYER ${i}${i===1?" • CAPTAIN":""}</div><label>Player ${i} name</label><input class="pname" placeholder="Player name"><label>Free Fire UID</label><input class="puid" inputmode="numeric" placeholder="Enter UID"></div>`);
+function validateSquad(){let names=[...document.querySelectorAll(".pname")],uids=[...document.querySelectorAll(".puid")];let ok=document.getElementById("squad").value.trim()&&document.getElementById("captain").value.trim()&&names.every(x=>x.value.trim())&&uids.every(x=>x.value.trim());document.getElementById("regMsg").textContent=ok?"All four player details are filled. This is only a local preview; live registration requires account login and secure backend.":"Please enter squad name, captain name and all four players' names and UIDs."}
+function toast(s){let t=document.getElementById("toast");t.textContent=s;t.style.display="block";setTimeout(()=>t.style.display="none",2600)}
+setTimeout(()=>document.getElementById("splash").classList.add("hide"),1900);
+</script>
+</body></html>
